@@ -49,7 +49,7 @@ class DataParser:
         self.district_label_df = pd.read_csv('data/districts.csv')
         self.types_edit_df = pd.read_csv('data/types_edit.csv')
         self.types_set = set(self.types_edit_df['name'])
-        self.result_name = 'parsed_data.csv'
+        self.result_name = 'data/parsed_data.csv'
         self.all_dfs = []
 
     def select_type(self, types):
@@ -147,7 +147,7 @@ def main():
     data_parser.run()
 
     print('Processing data...')
-    data_file_path = 'parsed_data.csv'
+    data_file_path = 'data/parsed_data.csv'
     popularity_file_path = 'data/districts.csv'
     district_correlation = DistrictCorrelation(data_file_path, popularity_file_path)
     for year in [2023, 2022]:
